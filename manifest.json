@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "WCO Alert",
+  "version": "1.0.1",
+  "action": {
+    "default_icon":{
+      "32": "images/32.png"
+    }
+  },
+  "icons":{
+    "128":  "images/128.png"
+  },
+  "default_locale": "ja_JP",
+  "description": "WCO alert",
+  "permissions": ["activeTab","tabs","scripting"],
+  "content_scripts":[{
+    "matches": ["https://admin.web-camp.online/admin/questions"],
+    "js": ["alert.js"]
+  }]
+}
