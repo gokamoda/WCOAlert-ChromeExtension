@@ -20,7 +20,7 @@ function alert_danger() {
       const danger_id = danger[i].children[1].outerText
       const element = document.getElementById(danger_id)
       const danger_text = danger[i].children[10].outerText
-      if ( (danger_text == "基礎知識学習フェーズ" || danger_text == "応用知識学習フェーズ"|| danger_text == "応用課題フェーズ") &&  !element){
+      if ( (danger_text == "基礎知識学習フェーズ" || danger_text == "応用知識学習フェーズ"|| danger_text == "応用課題フェーズ"|| danger_text == "チーム開発フェーズ") &&  !element){
         sound("sine", 0.3)
         var textbox_element = document.getElementById('wrapper');
         var new_element = document.createElement('p');
