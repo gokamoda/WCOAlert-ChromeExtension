@@ -1,5 +1,27 @@
 window.onload = function(){
-  setInterval(alert_danger, 10000);
+  let h5 = document.createElement('h5')
+  h5.setAttribute('style','margin-top: 10px;')
+  h5.innerHTML = "<strong>WCO Alert </strong>"
+  let btnOn = document.createElement("button")
+  let btnOff = document.createElement("button")
+  btnOn.innerText ="Alert On"
+  btnOff.innerText ="Alert Off"
+  btnOn.setAttribute('class', 'btn btn-success')
+  btnOff.setAttribute('class', 'btn btn-success')
+  document.getElementById("questions-filter").appendChild(h5)
+  document.getElementById("questions-filter").appendChild(btnOn)
+  document.getElementById("questions-filter").appendChild(btnOff)
+  btnOff.disabled = true
+  btnOn.onclick = function btnOnClick(){
+    alert = setInterval(alert_danger, 10000);
+    btnOn.disabled = true
+    btnOff.disabled = false
+  }
+  btnOff.onclick = function btnOffClick(){
+    clearInterval(alert)
+    btnOn.disabled = false
+    btnOff.disabled = true
+  }
 }
 
 // thanks to mr.fuke
@@ -9,7 +31,6 @@ function alert_danger() {
     const ctx = new AudioContext()
     const osc = ctx.createOscillator()
     osc.type = type
-    osc.connect(ctx.destination)
     osc.start()
     osc.stop(sec)
   }
