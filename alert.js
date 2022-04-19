@@ -5,10 +5,13 @@ window.onload = function(){
 
   let btnOn = document.createElement("button")
   btnOn.innerText ="Alert On"
+  btnOn.setAttribute('style', 'margin-right:5px;')
   btnOn.setAttribute('class', 'btn btn-success')
-
+  
+  
   let btnOff = document.createElement("button")
   btnOff.innerText ="Alert Off"
+  btnOff.setAttribute('style', 'margin-right:5px;')
   btnOff.setAttribute('class', 'btn btn-success')
 
   let volBar = document.createElement("div")
